@@ -21,13 +21,12 @@ install_requires = ['aiohttp>=3.0']
 
 setup(name='beeminderpy',
       version=version,
-      description="Python asyncio wrapper for the Beeminder REST API",
+      description="Python async wrapper for the Beeminder REST API",
       classifiers=[
           'License :: OSI Approved :: Apache Software License',
           'Intended Audience :: Developers',
           'Programming Language :: Python',
           'Programming Language :: Python :: 3',
-          'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6',
           'Programming Language :: Python :: 3.7',
           'Topic :: Internet :: WWW/HTTP',
@@ -40,4 +39,9 @@ setup(name='beeminderpy',
       packages=find_packages(),
       python_requires='>=3.6',
       install_requires=install_requires,
+      entry_points={
+          'console_scripts': [
+              'beeminderpy = beeminderpy.cli:main',
+          ]
+      },
       include_package_data=True)
